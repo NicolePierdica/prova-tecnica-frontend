@@ -1,0 +1,22 @@
+<nav>
+  <li>
+    <a
+      class="nav-link"
+      aria-current="page"
+      [routerLink]="['/todo']"
+      routerLinkActive="active"
+      (click)="getTodo()"
+      >ToDoList</a
+    >
+  </li>
+  <li>
+    <a
+      class="nav-link"
+      aria-current="page"
+      [routerLink]="['/completed']"
+      routerLinkActive="active"
+      (click)="getCompleted()"
+      >Completati</a
+    >
+  </li>
+</nav>

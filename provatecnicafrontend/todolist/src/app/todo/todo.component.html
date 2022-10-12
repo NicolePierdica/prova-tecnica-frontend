@@ -1,0 +1,38 @@
+
+ <div class="task">
+  <input
+    type="text"
+    [(ngModel)]="newTaskTitle"
+    placeholder="Aggiungi una nuova Task"
+    id="input"
+  />
+  <button id="aggiungi" (click)="addTask()">Aggiungi</button>
+  </div>
+  <ng-template #nonCiSonoTask>
+  <p id="noTask">* Non ci sono Task *</p>
+  </ng-template>
+
+<div id="lista">
+  <ng-container *ngIf="tasks; else ciSonoTask">
+    <div *ngIf="tasks.length > 0; else nonCiSonoTask">
+      <div *ngFor="let task of tasks; let i = index">
+        <div id="taskAggiunte">
+          - {{ task.title }}
+          <button
+            type="checkbox"
+            class="complete"
+            (click)="completedTask(task, i)"
+          >
+            <i></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #ciSonoTask>
+    <div class="smile"></div>
+    <p>Recupero delle Tasks in corso...</p>
+  </ng-template>
+ </div>
+
+

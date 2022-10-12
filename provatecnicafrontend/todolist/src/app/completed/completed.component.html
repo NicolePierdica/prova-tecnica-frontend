@@ -1,0 +1,16 @@
+
+<div id="finito">
+  <h3>Task Completate</h3>
+  <ng-container *ngIf="tasks; else ciSonoTask">
+    <div *ngIf="tasks.length > 0; else nonCiSonoTask">
+      <div *ngFor="let task of tasks; let i = index">
+        <div id="taskFinite">{{ task.title }} <span> <i class="fa-solid fa-check-double"></i></span></div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #ciSonoTask>
+  <div class="smile"></div>
+    <p>Recupero delle Task in corso...</p>
+  </ng-template>
+</div>
+<ng-template #nonCiSonoTask> <p id="noTask"> * Non ci sono task completati * </p> </ng-template>
